@@ -1,0 +1,28 @@
+<%- include('../components/admin/upside') %>
+    <div id="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Gambar Buku di Kiri -->
+                <div class="col-md-2 mx-5">
+                    <img src="/image/books/<%= book.gambar %>" class="img-fluid rounded" alt="<%= book.judul %>" style="width: 500px; object-fit: cover;">
+                    
+                    <!-- Tombol Update dan Delete di Sebelah Kiri Bawah Gambar -->
+                    <div class="mt-4">
+                        <a href="/books" class="btn btn-primary w-100">Kembali</a>
+                    </div>
+                </div>
+
+                <!-- Informasi Buku di Kanan -->
+                <div class="col-md-7">
+                    <h2><b><%= book.judul %></b></h2>
+                    <p><strong>Penulis:</strong> <%= book.penulis %></p>
+                    <p><strong>Harga:</strong> Rp <%= book.harga %></p>
+                    <p><strong>Tahun Terbit:</strong> <%= book.tahun_terbit %></p>
+                    <p><strong>Deskripsi:</strong></p>
+                    <p><%= book.deskripsi %></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <%- include('../components/admin/bottomside') %>

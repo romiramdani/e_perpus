@@ -1,0 +1,58 @@
+<%- include('../../components/admin/upside') %>
+    <div id="content">
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Tambah Buku Baru</h1>
+
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <% if (error) { %>
+                        <p style="color: red;"><%= error %></p>
+                    <% } %>
+                    <form action="/adminBooks/update/<%= book.id %>" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Judul Buku</label>
+                            <input type="text" class="form-control" id="judul" name="judul" value="<%= book.judul %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="penulis" class="form-label">Penulis</label>
+                            <input type="text" class="form-control" id="penulis" name="penulis" value="<%= book.penulis %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="penerbit" class="form-label">Penerbit</label>
+                            <input type="text" class="form-control" id="penerbit" name="penerbit" value="<%= book.penerbit %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kota_terbit" class="form-label">Kota Terbit</label>
+                            <input type="text" class="form-control" id="kota_terbit" name="kota_terbit" value="<%= book.kota_terbit %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tahun_terbit" class="form-label">Tahun Terbit</label>
+                            <input type="number" class="form-control" id="tahun_terbit" name="tahun_terbit" value="<%= book.tahun_terbit %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="stok" class="form-label">Stok</label>
+                            <input type="number" class="form-control" id="stok" name="stok" value="<%= book.stok %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="harga" class="form-label">Harga</label>
+                            <input type="number" class="form-control" id="harga" name="harga" value="<%= book.harga %>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">deskripsi</label>
+                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required><%= book.deskripsi %></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gambar">Gambar Buku</label>
+                            <input type="file" class="form-control-file" id="gambar" name="gambar">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <a href="/adminBooks" class="btn btn-secondary">Kembali</a>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%- include('../../components/admin/bottomside') %>

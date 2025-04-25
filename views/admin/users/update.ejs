@@ -1,0 +1,45 @@
+<%- include('../../components/admin/upside') %>
+<div id="content">
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Perbarui User</h1>
+
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <% if (error) { %>
+                    <p style="color: red;"><%= error %></p>
+                <% } %>
+                <form action="/adminUsers/update/<%= user.id %>" method="POST">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<%= user.nama %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" value="<%= user.username %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password (Leave blank to keep current password)</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Leave blank if not changing">
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-select" id="role" name="role">
+                            <option value="2" <%= user.role === 2 ? 'selected' : '' %>>User</option>
+                            <option value="1" <%= user.role === 1 ? 'selected' : '' %>>Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="/adminUsers" class="btn btn-secondary">Kembali</a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<%- include('../../components/admin/bottomside') %>

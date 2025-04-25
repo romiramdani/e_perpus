@@ -1,0 +1,28 @@
+<%- include('../components/client/upside') %>
+<div id="content">
+    <div class="container-fluid">
+        <h1 class="text-center">Daftar Buku</h1>
+        <div class="row">
+            <% books.forEach(book => { %>
+                <div class="col-md-3 mb-4">
+                    <div class="card" style="min-height: 450px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <img src="/image/books/<%= book.gambar %>" class="card-img-top" alt="<%= book.judul %>" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="min-height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><%= book.judul %></h5>
+                            <a href="/books/<%= book.id %>" class="btn btn-primary mt-2 w-100">Detail</a>
+                            <% if (!borrowedBookIds.includes(book.id)) { %>
+                                <form action="/books/borrow" method="POST" style="display:inline;">
+                                    <input type="hidden" name="bookId" value="<%= book.id %>">
+                                    <button type="submit" class="btn btn-success mt-2 w-100">Pinjam</button>
+                                </form>
+                            <% } else { %>
+                                <button class="btn btn-secondary mt-2 w-100" disabled>Sudah Dipinjam</button>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<%- include('../components/client/bottomside') %>

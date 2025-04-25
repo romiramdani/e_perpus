@@ -1,0 +1,113 @@
+<%- include('../components/admin/upside')  %>
+
+<div id="content">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-primary">Dashboard</h1>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Book List Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted text-uppercase mb-2">Daftar Buku</h6>
+                            <h3 class="text-dark mb-0"><%= totalBooks %></h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-book fa-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Borrowed Books Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted text-uppercase mb-2">Peminjaman</h6>
+                            <h3 class="text-dark mb-0"><%= totalPeminjaman %></h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-book-reader fa-2x text-success"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorite Category Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <h6 class="text-muted text-uppercase mb-2">Buku Favorit</h6>
+                                <h3 class="text-dark mb-0"><%= bukuFavorit.judul %></h3>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-heart fa-2x text-info"></i>
+                            </div>
+                        </div>
+                        <div class="progress mt-2" style="height: 8px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Book Requests Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted text-uppercase mb-2">Jumlah Pengguna</h6>
+                            <h3 class="text-dark mb-0"><%= totalUser %></h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-comments fa-2x text-warning"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Chart/Graphs Section -->
+        <!-- Uncomment the section below to add more widgets or charts -->
+        <!--
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white d-flex align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Diagram Buku</h6>
+                        <i class="fas fa-chart-line text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white d-flex align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Favorit Books</h6>
+                        <i class="fas fa-chart-pie text-primary"></i>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+    </div>
+</div>
+
+<%- include('../components/admin/bottomside')  %>

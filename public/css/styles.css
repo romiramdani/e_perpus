@@ -1,0 +1,42 @@
+.carousel-item img {
+    width: 1200px;         /* Mengatur lebar gambar */
+    height: 650px;        /* Mengatur tinggi gambar */
+    object-fit: cover;    /* Memastikan gambar tidak terdistorsi */
+    transition: transform 0.3s ease; /* Efek transisi ketika gambar dihover */
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.card img {
+    width: 415px;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease; 
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    min-height: 450px; /* Sesuaikan dengan kebutuhan */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    min-height: 50px; /* Sesuaikan agar judul terlihat rapi */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-img-top {
+    height: 250px; /* Sesuaikan agar gambar memiliki ukuran seragam */
+    object-fit: cover;
+}
+
+

@@ -1,0 +1,39 @@
+<%- include('../../components/admin/upside') %>
+    <div id="content">
+        <div class="container-fluid">
+            <h1 class="text-center">History Peminjaman</h1>
+            <% if (history.length > 0) { %>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Buku</th>
+                            <th>Username</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Pengembalian</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% history.forEach((h, index) => { %>
+                            <tr>
+                                <td><%= index + 1 %></td>
+                                <td><%= h.judul %></td>
+                                <td><%= h.username %></td>
+                                <td><%= new Date(h.tanggal_peminjaman).toLocaleDateString('id-ID', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) %></td>
+                                <td>
+                                    <%= h.tanggal_pengembalian ? new Date(h.tanggal_pengembalian).toLocaleDateString('id-ID', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }) : '-' %>
+                                </td>
+                                <td><%= h.status %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+            <% } else { %>
+                <p class="text-center">Belum ada peminjaman</p>
+            <% } %>
+        </div>
+    </div>
+<%- include('../../components/admin/bottomside') %>
+
+
+

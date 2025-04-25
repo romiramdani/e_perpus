@@ -1,0 +1,49 @@
+<%- include('../../components/admin/upside') %>
+    <div id="content">
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Tambah User Baru</h1>
+
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <% if (error) { %>
+                        <p style="color: red;"><%= error %></p>
+                    <% } %>
+                    <form action="/adminUsers" method="POST">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Konfirmasi Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" name="role">
+                            <option value="2">User</option>
+                            <option value="1">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                        <a href="/adminUsers" class="btn btn-secondary">Kembali</a>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%- include('../../components/admin/bottomside') %>

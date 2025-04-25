@@ -1,0 +1,37 @@
+<%- include('../components/client/upside') %>
+    <div id="content">
+        <div class="container-fluid">
+            <h1 class="text-center">Buku yang Dipinjam</h1>
+            <% if (borrowedBooks.length > 0) { %>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Judul Buku</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% borrowedBooks.forEach(book => { %>
+                            <tr>
+                                <td><%= book.judul %></td>
+                                <td><%= book.tanggal_peminjaman %></td>
+                                <td>
+                                    <form action="/books/return" method="POST" style="display:inline;">
+                                        <input type="hidden" name="historyId" value="<%= book.id %>">
+                                        <button type="submit" class="btn btn-warning">Kembalikan</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p class="text-center">Anda belum meminjam buku apapun.</p>
+            <% } %>
+        </div>
+    </div>
+<%- include('../components/client/bottomside') %>
+
+
+
